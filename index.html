@@ -1,14 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 	<head>
-		<title>Procura-se um rato</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Nico | Um poodle muito amado</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+		<style>
+			:root {
+				--ink: #25332d;
+				--cream: #f8f3e9;
+				--paper: #fffdf8;
+				--green: #527963;
+				--orange: #e97938;
+				--line: #d8dfd1;
+			}
+
+			* { box-sizing: border-box; }
+			body {
+				margin: 0;
+				background: var(--cream);
+				color: var(--ink);
+				font-family: Manrope, sans-serif;
+			}
+			body::before {
+				content: "";
+				position: fixed;
+				inset: 0;
+				pointer-events: none;
+				opacity: .35;
+				background-image: radial-gradient(#c7d3c3 1px, transparent 1px);
+				background-size: 24px 24px;
+			}
+			main { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; position: relative; }
+			header, footer { width: min(1120px, calc(100% - 48px)); margin: auto; }
+			header { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; }
+			.logo { font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; }
+			.logo span { color: var(--orange); }
+			.status { display: flex; gap: 8px; align-items: center; color: var(--green); font: 500 11px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .06em; }
+			.status i { width: 8px; height: 8px; border-radius: 50%; background: #7bae55; display: inline-block; box-shadow: 0 0 0 5px #dce9d6; }
+			.hero { width: min(1120px, calc(100% - 48px)); margin: auto; display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(42px, 8vw, 110px); align-items: center; padding: 26px 0 70px; }
+			.eyebrow { color: var(--orange); font: 500 12px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .11em; margin: 0 0 18px; }
+			h1 { font: 700 clamp(58px, 8vw, 108px)/.9 Fraunces, serif; letter-spacing: -.045em; margin: 0 0 25px; max-width: 500px; }
+			h1 em { color: var(--green); font-style: normal; display: block; }
+			.intro { color: #526058; font-size: 17px; line-height: 1.7; max-width: 420px; margin-bottom: 30px; }
+			.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+			button, .contact { border: 0; cursor: pointer; font: 700 13px Manrope, sans-serif; text-decoration: none; padding: 14px 18px; border-radius: 4px; transition: transform .2s, background .2s; }
+			button { background: var(--orange); color: white; }
+			button:hover, .contact:hover { transform: translateY(-3px); }
+			.contact { color: var(--green); border: 1px solid #b7c8b8; background: transparent; }
+			.love-count { color: var(--green); font: 500 12px 'DM Mono', monospace; }
+			.photo-wrap { position: relative; max-width: 500px; justify-self: end; }
+			.photo-wrap::before { content: ""; position: absolute; background: #dfe8d9; width: 78%; height: 88%; right: -25px; top: -24px; z-index: -1; }
+			.photo-wrap::after { content: "★"; position: absolute; top: -36px; left: -27px; color: var(--orange); font-size: 39px; transform: rotate(-15deg); }
+			.photo { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 28%; border: 11px solid var(--paper); box-shadow: 0 20px 50px #7a806a2e; }
+			.caption { background: var(--paper); padding: 15px 18px; display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: #68746b; border: 1px solid var(--line); border-top: 0; }
+			.caption strong { color: var(--ink); }
+			footer { border-top: 1px solid var(--line); padding: 19px 0 25px; display: flex; justify-content: space-between; color: #768178; font-size: 12px; }
+			footer span:last-child { color: var(--orange); }
+			@media (max-width: 720px) {
+				header, footer, .hero { width: min(100% - 36px, 520px); }
+				header { padding: 22px 0; }
+				.status { font-size: 10px; }
+				.hero { grid-template-columns: 1fr; padding-top: 32px; gap: 46px; }
+				h1 { font-size: clamp(64px, 19vw, 90px); }
+				.intro { font-size: 15px; }
+				.photo-wrap { width: calc(100% - 18px); justify-self: start; margin-left: 5px; }
+				footer { flex-direction: column; gap: 8px; }
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Você por acaso viu esse ratinho?</h1>
-		<img src="nico.jpeg" alt="Rato perdido" width="500" height="400">
-		<p>Pois bem esse rato se chama nico.</p>
-		<p><i>Vulgarmente conhecido como cabeça de penico</i></p>
-		<p>se você viu, entre em contato com papa(a mamãe dele)</p>
-		<p>Telefone para contato: (21) 97961-8740</p>
+		<main>
+			<header>
+				<div class="logo">Nico <span>♥</span> chan</div>
+				<div class="status"><i></i> poodle em seu habitat</div>
+			</header>
+
+			<section class="hero">
+				<div class="copy">
+					<p class="eyebrow">arquivo de fofura // 001</p>
+					<h1>Oi, eu sou o <em>Nico.</em></h1>
+					<p class="intro">Um poodle de coração enorme, sorriso pronto e uma coleção particular de poses irresistíveis. Também atende por “cabeça de penico” quando apronta.</p>
+					<div class="actions">
+						<button id="loveButton" type="button">♡ Mandar carinho</button>
+						<a class="contact" href="tel:+5521979618740">Falar com a mamãe</a>
+						<span class="love-count" id="loveCount">0 carinhos</span>
+					</div>
+				</div>
+				<figure class="photo-wrap">
+					<img class="photo" src="nico.jpeg" alt="Nico, um poodle branco sorrindo com uma gravata laranja de cenoura">
+					<figcaption class="caption"><span><strong>Nico</strong> em dia de gala</span><span>♥ 100% amado</span></figcaption>
+				</figure>
+			</section>
+
+			<footer><span>feito com carinho pela família do Nico</span><span>São Paulo · Brasil</span></footer>
+		</main>
+		<script>
+			const button = document.querySelector('#loveButton');
+			const counter = document.querySelector('#loveCount');
+			let affection = 0;
+			button.addEventListener('click', () => {
+				affection += 1;
+				counter.textContent = `${affection} ${affection === 1 ? 'carinho' : 'carinhos'}`;
+				button.textContent = '♥ Carinho enviado!';
+			});
+		</script>
 	</body>
 </html>
